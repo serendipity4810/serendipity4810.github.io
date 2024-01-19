@@ -1,4 +1,4 @@
-// URL to your CSV file (replace with the actual URL)
+// URL to CSV
 const csvUrl = 'https://github.com/serendipity4810/serendipity4810.github.io/blob/main/Frågebatteri%20test%20-%20Blad1.csv';
 
 // Reference to the form and result container
@@ -120,7 +120,7 @@ function displayResult(totalScore) {
         }
     }
 
-    resultContainer.textContent = `Your total score: ${totalScore} points. ${resultMessage}`;
+    resultContainer.textContent = `${resultMessage}`;
 }
 
 // Fetch questions when the page loads
