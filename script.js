@@ -48,8 +48,37 @@ function calculateScore() {
                 }
             });
 
-            resultContainer.textContent = `Your total score: ${totalScore} points`;
+            displayResult(totalScore);
         })
+        .catch(error => {
+            console.error('Error fetching answers and points from CSV:', error);
+        });
+}
+
+// Function to display result based on the total score
+function displayResult(totalScore) {
+    let resultMessage = '';
+
+    // Define score ranges and associated messages
+    const scoreRanges = [
+        { min: 0, max: 20, message: 'You can do better!' },
+        { min: 21, max: 40, message: 'Good effort!' },
+        { min: 41, max: 60, message: 'Well done!' },
+        { min: 61, max: 80, message: 'Great job!' },
+        { min: 81, max: 100, message: 'Excellent!' }
+    ];
+
+    // Find the range that matches the total score
+    for (const range of scoreRanges) {
+        if (totalScore >= range.min && totalScore <= range.max) {
+            resultMessage = range.message;
+            break;
+        }
+    }
+
+    resultContainer.textContent = `Your total score: ${totalScore} points. ${resultMessage}`;
+}
+)
         .catch(error => {
             console.error('Error fetching answers and points from CSV:', error);
         });
