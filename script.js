@@ -1,5 +1,5 @@
 // URL to your CSV file (replace with the actual URL)
-const csvUrl = 'path/to/your/questions.csv';
+const csvUrl = 'https://github.com/serendipity4810/serendipity4810.github.io/blob/main/Frågebatteri%20test%20-%20Blad1.csv';
 
 // Reference to the form and result container
 const quizForm = document.getElementById('quiz-form');
